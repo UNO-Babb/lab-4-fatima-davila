@@ -11,13 +11,34 @@ def drawSquare(myTurtle, size):
         myTurtle.forward(size)
         myTurtle.right(90)
 
-
+def drawPolygon(sam, sides):
+    for s in range(sides):
+        sam.forward(50)
+        sam.right(360/sides)
+        
+def fillCorner(felipe, corner):
+    #draw big square
+    drawSquare(felipe, 100)
+    
+    if corner == 1:
+        felipe.begin_fill()
+        drawSquare(felipe, 50)
+        felipe.end_fill()
+    elif corner ==2:
+        felipe.forward(50)
+        felipe.begin_fill()
+        drawSquare(felipe, 50)
+        felipe.end_fill()
+    
 def main():
     myTurtle = turtle.Turtle()
-    # drawPolygon(myTurtle, 5) #draws a pentagon
+    
+    # drawSquare(myTurtle,100)
+    
+    #drawPolygon(myTurtle, 5) #draws a pentagon
     # drawPolygon(myTurtle, 8) #draws an octogon
-
-    # fillCorner(myTurtle, 2) #draws a square with top right corner filled in.
+    # drawPolygon(myTurtle,3)
+    fillCorner(myTurtle, 2) #draws a square with top right corner filled in.
     # fillCorner(myTurtle, 3) #draws a square bottom left corner filled in.
 
     # squaresInSquares(myTurtle, 5) #draws 5 concentric squares
